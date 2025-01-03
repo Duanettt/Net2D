@@ -2,6 +2,14 @@
 
 void Renderer::setup_renderer()
 {
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    setup_quad_renderer();
+    setup_textures();
+}
+
+void Renderer::setup_quad_renderer()
+{
     // Soon this will be used for texture data so we will separate it to a texture class or sprite class.
     float vertices[] = {
         // Position     // Texture coords
@@ -35,6 +43,13 @@ void Renderer::setup_shaders()
 
 }
 
+void Renderer::setup_textures()
+{
+    ResourceManager& rm = ResourceManager::get_instance();
+
+    rm.load_textures("texture1", "res/Texture/TX Tileset Grass.png");
+}
+
 void Renderer::draw()
 {
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -46,6 +61,12 @@ void Renderer::draw()
     spriteShader->use();
     glm::mat4 modelMatrix = glm::mat4(1.0f);
     spriteShader->setMat4("model", modelMatrix);
+
+    Texture* texture1 = rm.get_texture("texture1");
+    unsigned int currentTexture = texture1->get_texture();
+
+    glBindTexture(GL_TEXTURE_2D, currentTexture);
+
     glBindVertexArray(VAO);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     glBindVertexArray(0);

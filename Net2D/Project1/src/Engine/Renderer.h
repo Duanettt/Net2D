@@ -18,7 +18,9 @@ public:
 	Renderer() = default;
 
 	void setup_renderer();
+	void setup_quad_renderer();
 	void setup_shaders();
+	void setup_textures();
 	void draw();
 
 private:
