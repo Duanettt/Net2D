@@ -136,6 +136,7 @@
     <ClCompile Include="src\GL\stb_image.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\GL\Texture.cpp" />
+    <ClCompile Include="src\Game\Tileset.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\ResourceManager.h" />
@@ -147,6 +148,7 @@
     <ClInclude Include="src\GL\Shader.h" />
     <ClInclude Include="src\GL\stb_image.h" />
     <ClInclude Include="src\GL\Texture.h" />
+    <ClInclude Include="src\Game\Tileset.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\sprite_shader.frag" />
