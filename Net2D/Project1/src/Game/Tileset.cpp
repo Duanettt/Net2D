@@ -2,23 +2,24 @@
 
 Tileset::Tileset(Texture* texture, int width, int height) : tilesetTexture(texture), tileWidth(width), tileHeight(height)
 {
-	rows = texture->get_height() / tileHeight;
-	columns = texture->get_width() / tileWidth;
+    rows = texture->get_height() / tileHeight;
+    columns = texture->get_width() / tileWidth;
 
+    // Calculate UV size per tile
+    float tileU = (float)tileWidth / texture->get_width();   // horizontal
+    float tileV = (float)tileHeight / texture->get_height(); // vertical
 
-	float tileU = tileHeight / texture->get_height();
-	float tileV = tileWidth / texture->get_width();
-
-
-	for (int i = 0; i < rows; i++)
-		for (int j = 0; j < columns; j++)
-		{
-			Tile tile;
-			// Basically due to the fact opengl 0,0 starts at the bottom left we gotta flip something so... yeah...
-			tile.textureOffset = glm::vec2(i * tileU, (rows - 1 - j) * tileV);
-			tile.tileSize = glm::vec2(tileU, tileV);
-			tiles.push_back(tile);
-		}
+    for (int y = 0; y < rows; y++) {
+        for (int x = 0; x < columns; x++) {
+            Tile tile;
+            // Calculate UV offset for this tile
+            tile.textureOffset = glm::vec2(
+                x * tileU,                // U offset (horizontal)
+                (rows - 1 - y) * tileV    // V offset (vertical)
+            );
+            tile.tileSize = glm::vec2(tileU, tileV);
+            tiles.push_back(tile);
+        }
+    }
 }
-
 

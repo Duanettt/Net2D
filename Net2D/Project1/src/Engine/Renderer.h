@@ -11,6 +11,7 @@
 
 #include "../GL/Shader.h"
 #include "../Core/ResourceManager.h"
+#include "../Game/Tileset.h"
 
 class Renderer
 {
@@ -21,10 +22,13 @@ public:
 	void setup_quad_renderer();
 	void setup_shaders();
 	void setup_textures();
+
+	void drawTile(int tileIndex, const glm::vec2& position, const glm::vec2& size);
 	void draw();
 
 private:
-	unsigned int VAO, VBO;
+	Tileset* tileset;
+	unsigned int VAO, VBO, EBO;
 
 };
 

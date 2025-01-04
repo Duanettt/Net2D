@@ -8,6 +8,8 @@ int main()
 	engine.init();
 	engine.setup_renders();
 
+
+
 	while (engine.is_running())
 	{
 		engine.update();

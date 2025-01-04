@@ -50,8 +50,8 @@ void Engine::setup_renders()
 }
 void Engine::run()
 {
-    r.draw();
-
+    r.drawTile(0, glm::vec2(100, 100), glm::vec2(32, 32));
+    //r.draw();
 
     glfwSwapBuffers(window->GetWindow());
     glfwPollEvents();

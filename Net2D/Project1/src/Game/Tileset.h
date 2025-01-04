@@ -18,19 +18,21 @@ public:
 	Tileset(Texture* texture, int width, int height);
 
     // Get a specific tile by index
-    const Tile& getTile(int index) const {
+    const Tile& get_tile(int index) const {
         return tiles[index];
     }
 
     // Get a specific tile by row and column
-    const Tile& getTile(int row, int col) const {
+    const Tile& get_tile(int row, int col) const {
         return tiles[row * columns + col];
     }
 
-    int getTileWidth() const { return tileWidth; }
-    int getTileHeight() const { return tileHeight; }
-    int getColumns() const { return columns; }
-    int getRows() const { return rows; }
+    int get_tile_width() const { return tileWidth; }
+    int get_tile_height() const { return tileHeight; }
+    int get_columns() const { return columns; }
+    int get_rows() const { return rows; }
+
+    Texture* get_texture() const { return tilesetTexture; }
 
 private:
 	Texture* tilesetTexture;
