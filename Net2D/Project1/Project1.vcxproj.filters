@@ -42,7 +42,7 @@
     <ClCompile Include="src\GL\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Game\Tileset.cpp">
+    <ClCompile Include="src\Tilesets\Tileset.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Quad.cpp">
@@ -52,6 +52,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\VAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tilesets\Tilemap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tilesets\TileMapEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,7 +89,7 @@
     <ClInclude Include="src\GL\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Game\Tileset.h">
+    <ClInclude Include="src\Tilesets\Tileset.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Quad.h">
@@ -95,9 +101,17 @@
     <ClInclude Include="src\Core\VAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Tilesets\Tilemap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tilesets\TileMapEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\sprite_shader.frag" />
     <None Include="res\shaders\sprite_shader.vert" />
+    <None Include="res\shaders\line_shader.frag" />
+    <None Include="res\shaders\line_shader.vert" />
   </ItemGroup>
 </Project>

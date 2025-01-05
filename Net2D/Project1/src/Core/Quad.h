@@ -3,7 +3,7 @@
 #include <vector>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "../Game/Tileset.h"
+#include "../Tilesets/Tileset.h"
 
 class Quad
 {

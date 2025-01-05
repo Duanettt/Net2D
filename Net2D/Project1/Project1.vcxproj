@@ -137,9 +137,11 @@
     <ClCompile Include="src\GL\stb_image.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\GL\Texture.cpp" />
-    <ClCompile Include="src\Game\Tileset.cpp" />
+    <ClCompile Include="src\Tilesets\Tileset.cpp" />
     <ClCompile Include="src\Core\VAO.cpp" />
     <ClCompile Include="src\Core\VBO.cpp" />
+    <ClCompile Include="src\Tilesets\Tilemap.cpp" />
+    <ClCompile Include="src\Tilesets\TileMapEditor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Quad.h" />
@@ -152,11 +154,15 @@
     <ClInclude Include="src\GL\Shader.h" />
     <ClInclude Include="src\GL\stb_image.h" />
     <ClInclude Include="src\GL\Texture.h" />
-    <ClInclude Include="src\Game\Tileset.h" />
+    <ClInclude Include="src\Tilesets\Tileset.h" />
     <ClInclude Include="src\Core\VAO.h" />
     <ClInclude Include="src\Core\VBO.h" />
+    <ClInclude Include="src\Tilesets\Tilemap.h" />
+    <ClInclude Include="src\Tilesets\TileMapEditor.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\shaders\line_shader.frag" />
+    <None Include="res\shaders\line_shader.vert" />
     <None Include="res\shaders\sprite_shader.frag" />
     <None Include="res\shaders\sprite_shader.vert" />
   </ItemGroup>

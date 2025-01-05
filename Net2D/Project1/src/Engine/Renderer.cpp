@@ -10,6 +10,7 @@ void Renderer::setup_renderer()
     setup_textures();
 
     quad.setup_textures(tileset);
+
 }
 
 void Renderer::setup_quad_renderer()
@@ -54,11 +55,42 @@ void Renderer::setup_quad_renderer()
     glEnableVertexAttribArray(1);
 }
 
+void Renderer::setup_line_renderer(glm::vec2 start, glm::vec2 end, glm::vec4 color)
+{
+    ResourceManager& rm = ResourceManager::get_instance();
+
+    float vertices[] = {
+          start.x, start.y,  // First point
+          end.x, end.y       // Second point
+    };
+
+
+    glGenBuffers(1, &VBO);
+    glGenBuffers(1, &VAO);
+
+    glBindVertexArray(VAO);
+    // Update the vertex data in your VBO
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
+
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    Shader* lineShader = rm.get_shaders("lines");
+
+    lineShader->use();
+
+
+    lineShader->setVec4("color", color);
+}
+
 void Renderer::setup_shaders()
 {
     // Get a resource manager using singleton design pattern to load up our shaders
     ResourceManager& rm = ResourceManager::get_instance();
     rm.load_shaders("sprite", "res/shaders/sprite_shader.vert", "res/shaders/sprite_shader.frag");
+
+    rm.load_shaders("lines", "res/shaders/line_shader.vert", "res/shaders/line_shader.frag");
 
 }
 

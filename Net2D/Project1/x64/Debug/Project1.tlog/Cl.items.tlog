@@ -8,6 +8,8 @@ C:\dev\Net2D\Net2D\Project1\src\Engine\Engine.cpp;C:\dev\Net2D\Net2D\Project1\x6
 C:\dev\Net2D\Net2D\Project1\src\GL\stb_image.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\stb_image.obj
 C:\dev\Net2D\Net2D\Project1\src\main.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\main.obj
 C:\dev\Net2D\Net2D\Project1\src\GL\Texture.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\Texture.obj
-C:\dev\Net2D\Net2D\Project1\src\Game\Tileset.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\Tileset.obj
+C:\dev\Net2D\Net2D\Project1\src\Tilesets\Tileset.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\Tileset.obj
 C:\dev\Net2D\Net2D\Project1\src\Core\VAO.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\VAO.obj
 C:\dev\Net2D\Net2D\Project1\src\Core\VBO.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\VBO.obj
+C:\dev\Net2D\Net2D\Project1\src\Tilesets\Tilemap.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\Tilemap.obj
+C:\dev\Net2D\Net2D\Project1\src\Tilesets\TileMapEditor.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\TileMapEditor.obj

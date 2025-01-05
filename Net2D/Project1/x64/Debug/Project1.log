@@ -1,8 +1,8 @@
-﻿  Quad.cpp
-  Engine.cpp
-  Renderer.cpp
-  main.cpp
-  Generating Code...
+﻿  TileMapEditor.cpp
+C:\dev\Net2D\Net2D\Project1\src\Tilesets\TileMapEditor.cpp(13,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\dev\Net2D\Net2D\Project1\src\Tilesets\TileMapEditor.cpp(13,17): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\dev\Net2D\Net2D\Project1\src\Tilesets\TileMapEditor.cpp(18,27): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\dev\Net2D\Net2D\Project1\src\Tilesets\TileMapEditor.cpp(18,19): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   Project1.vcxproj -> C:\dev\Net2D\Net2D\x64\Debug\Project1.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
