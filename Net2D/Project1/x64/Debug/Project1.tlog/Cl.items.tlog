@@ -1,3 +1,4 @@
+C:\dev\Net2D\Net2D\Project1\src\Core\Quad.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\Quad.obj
 C:\dev\Net2D\Net2D\Project1\src\Core\ResourceManager.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\ResourceManager.obj
 C:\dev\Net2D\Net2D\Project1\src\Engine\Renderer.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\Renderer.obj
 C:\dev\Net2D\Net2D\Project1\src\Core\Window.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\Window.obj
@@ -8,3 +9,5 @@ C:\dev\Net2D\Net2D\Project1\src\GL\stb_image.cpp;C:\dev\Net2D\Net2D\Project1\x64
 C:\dev\Net2D\Net2D\Project1\src\main.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\main.obj
 C:\dev\Net2D\Net2D\Project1\src\GL\Texture.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\Texture.obj
 C:\dev\Net2D\Net2D\Project1\src\Game\Tileset.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\Tileset.obj
+C:\dev\Net2D\Net2D\Project1\src\Core\VAO.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\VAO.obj
+C:\dev\Net2D\Net2D\Project1\src\Core\VBO.cpp;C:\dev\Net2D\Net2D\Project1\x64\Debug\VBO.obj

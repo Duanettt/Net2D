@@ -12,6 +12,8 @@
 #include "../GL/Shader.h"
 #include "../Core/ResourceManager.h"
 #include "../Game/Tileset.h"
+#include "../Core/VBO.h"
+#include "../Core/Quad.h"
 
 class Renderer
 {
@@ -27,8 +29,10 @@ public:
 	void draw();
 
 private:
+	Quad quad;
 	Tileset* tileset;
-	unsigned int VAO, VBO, EBO;
+	unsigned int VAO, EBO;
+	unsigned int VBO;
 
 };
 

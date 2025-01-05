@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Core\Quad.cpp" />
     <ClCompile Include="src\Core\ResourceManager.cpp" />
     <ClCompile Include="src\Engine\Renderer.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
@@ -137,8 +138,11 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\GL\Texture.cpp" />
     <ClCompile Include="src\Game\Tileset.cpp" />
+    <ClCompile Include="src\Core\VAO.cpp" />
+    <ClCompile Include="src\Core\VBO.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core\Quad.h" />
     <ClInclude Include="src\Core\ResourceManager.h" />
     <ClInclude Include="src\Engine\Renderer.h" />
     <ClInclude Include="src\Core\Window.h" />
@@ -149,6 +153,8 @@
     <ClInclude Include="src\GL\stb_image.h" />
     <ClInclude Include="src\GL\Texture.h" />
     <ClInclude Include="src\Game\Tileset.h" />
+    <ClInclude Include="src\Core\VAO.h" />
+    <ClInclude Include="src\Core\VBO.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\sprite_shader.frag" />
