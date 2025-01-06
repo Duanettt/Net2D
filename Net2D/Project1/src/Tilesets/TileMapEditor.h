@@ -1,7 +1,8 @@
 #pragma once
 #include "Tilemap.h"
 #include "../Core/Window.h"
-#include "../Engine/Renderer.h"
+#include "../Graphics/Renderer.h"
+#include "../Globals.h"
 
 class TileMapEditor
 {
@@ -11,6 +12,8 @@ public:
 	void handle_input(GLFWwindow* window, double mouseX, double mouseY);
 
 	void set_current_tile(int tileIndex);
+
+	void setup_grid(Renderer& renderer);
 
 	void draw_grid(Renderer& renderer);
 

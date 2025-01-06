@@ -127,9 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Input\Input.cpp" />
+    <ClCompile Include="src\Input\InputManager.cpp" />
+    <ClCompile Include="src\Globals.cpp" />
     <ClCompile Include="src\Core\Quad.cpp" />
     <ClCompile Include="src\Core\ResourceManager.cpp" />
-    <ClCompile Include="src\Engine\Renderer.cpp" />
+    <ClCompile Include="src\Graphics\Renderer.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
     <ClCompile Include="src\Game\SpriteManager.cpp" />
     <ClCompile Include="src\GL\Camera.cpp" />
@@ -144,9 +147,12 @@
     <ClCompile Include="src\Tilesets\TileMapEditor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Input\Input.h" />
+    <ClInclude Include="src\Input\InputManager.h" />
+    <ClInclude Include="src\Globals.h" />
     <ClInclude Include="src\Core\Quad.h" />
     <ClInclude Include="src\Core\ResourceManager.h" />
-    <ClInclude Include="src\Engine\Renderer.h" />
+    <ClInclude Include="src\Graphics\Renderer.h" />
     <ClInclude Include="src\Core\Window.h" />
     <ClInclude Include="src\Game\SpriteManager.h" />
     <ClInclude Include="src\GL\Camera.h" />
@@ -165,6 +171,9 @@
     <None Include="res\shaders\line_shader.vert" />
     <None Include="res\shaders\sprite_shader.frag" />
     <None Include="res\shaders\sprite_shader.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\todo.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
