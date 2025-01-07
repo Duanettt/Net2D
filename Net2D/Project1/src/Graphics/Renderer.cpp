@@ -79,20 +79,32 @@ void Renderer::setup_textures()
 }
 
 void Renderer::drawTile(int tileIndex, const glm::vec2& position, const glm::vec2& size) {
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-
     ResourceManager& rm = ResourceManager::get_instance();
     Shader* spriteShader = rm.get_shaders("sprite");
     spriteShader->use();
 
-    // Calculate model matrix for position and size
+    //// Convert screen coordinates to normalized device coordinates (NDC)
+    float screenWidth = 800.0f;  // Get these from your window
+    float screenHeight = 600.0f;
+
+    //// Convert position to NDC (-1 to 1)
+    glm::vec2 ndcPos;
+    ndcPos.x = (position.x / screenWidth) * 2.0f - 1.0f;
+    ndcPos.y = -((position.y / screenHeight) * 2.0f - 1.0f); // Flip Y coordinates
+
+    //// Convert size to NDC scale
+    glm::vec2 ndcSize;
+    ndcSize.x = (20 / screenWidth) * 2.0f;
+    ndcSize.y = (20 / screenHeight) * 2.0f;
+
+    // Calculate model matrix
     glm::mat4 model = glm::mat4(1.0f);
-    //model = glm::translate(model, glm::vec3(1.0f));
-    //model = glm::scale(model, glm::vec3(size, 1.0f));
+    model = glm::translate(model, glm::vec3(ndcPos, 0.0f));
+    model = glm::scale(model, glm::vec3(ndcSize, 1.0f));
+
     spriteShader->setMat4("model", model);
 
-    // Get tile UV coordinates
+    // Set tile UV coordinates
     const Tile& tile = tileset->get_tile(tileIndex);
     spriteShader->setVec2("textureOffset", tile.textureOffset);
     spriteShader->setVec2("tileSize", tile.tileSize);

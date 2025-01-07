@@ -1,2 +1,6 @@
 [X] - Input
-[] - Tile map editor needs to be fixed.
+[X] - Drawing on tile map, 
+[] - We can draw but its the accuracy we need it linked to the grid.
+
+[] - Rendering sprites.
+[] - ImGUI Implementation.

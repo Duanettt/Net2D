@@ -9,7 +9,7 @@ Tilemap::Tilemap(Tileset* ts, int width, int height) : tileset(ts), mapWidth(wid
 
 int Tilemap::get_tile(int x, int y)
 {
-	if (x >= 0 && x <= mapWidth && y >= 0 && y <= mapHeight)
+	if (x >= 0 && x < mapWidth && y >= 0 && y < mapHeight)
 	{
 		return mapData[y][x];
 	}
@@ -17,7 +17,7 @@ int Tilemap::get_tile(int x, int y)
 
 int Tilemap::set_tile(int x, int y, int tileIndex)
 {
-	if (x >= 0 && x <= mapWidth && y >= 0 && y <= mapHeight)
+	if (x >= 0 && x < mapWidth && y >= 0 && y < mapHeight)
 	{
 		return mapData[y][x] = tileIndex;
 	}

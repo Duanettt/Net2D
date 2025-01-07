@@ -5,6 +5,7 @@
 #include "../Globals.h"
 #include "../Input/Input.h"
 #include "../Tilesets/Tilemap.h"
+#include "../Tilesets/TileMapEditor.h"
 
 class Engine
 {
@@ -22,9 +23,9 @@ public:
 
 private:
     KeyInput movementKeys;     // WASD movement
-    KeyInput editorKeys;       // Editor controls
     std::unique_ptr<Window> window;
     std::unique_ptr<Tilemap> currentMap;
+    TileMapEditor* tme;
     Cursor* cursor;
     bool editorMode;
     int currentTileIndex;
@@ -41,12 +42,7 @@ private:
         , editorMode(false)
         , currentTileIndex(0)
         , movementKeys({ GLFW_KEY_W, GLFW_KEY_A, GLFW_KEY_S, GLFW_KEY_D })
-        , editorKeys({
-            GLFW_KEY_E,           // Toggle editor
-            GLFW_KEY_LEFT,        // Previous tile
-            GLFW_KEY_RIGHT,       // Next tile
-            GLFW_KEY_DELETE       // Clear tile
-            })
+        , tme(nullptr)
     {
         globals.r = new Renderer();
     }
@@ -54,5 +50,6 @@ private:
     ~Engine()
     {
         delete cursor;
+        delete tme;
     }
 };
