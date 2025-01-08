@@ -69,6 +69,9 @@
     <ClCompile Include="src\Input\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Game\Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Engine.h">
@@ -125,12 +128,17 @@
     <ClInclude Include="src\Input\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Game\Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\sprite_shader.frag" />
     <None Include="res\shaders\sprite_shader.vert" />
     <None Include="res\shaders\line_shader.frag" />
     <None Include="res\shaders\line_shader.vert" />
+    <None Include="res\shaders\tilesetShader.vert" />
+    <None Include="res\shaders\tilesetShader.frag" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\todo.txt" />

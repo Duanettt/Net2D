@@ -39,3 +39,8 @@ Texture* ResourceManager::get_texture(const char* name)
 	auto it = texture_storage.find(name);
 	return it != texture_storage.end() ? it->second.get() : nullptr;
 }
+Texture* ResourceManager::get_texture(const std::string name)
+{
+	auto it = texture_storage.find(name);
+	return it != texture_storage.end() ? it->second.get() : nullptr;
+}

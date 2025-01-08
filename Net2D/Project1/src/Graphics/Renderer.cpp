@@ -60,8 +60,8 @@ void Renderer::setup_shaders()
 {
     // Get a resource manager using singleton design pattern to load up our shaders
     ResourceManager& rm = ResourceManager::get_instance();
+    rm.load_shaders("tiles", "res/shaders/tilesetShader.vert", "res/shaders/tilesetShader.frag");
     rm.load_shaders("sprite", "res/shaders/sprite_shader.vert", "res/shaders/sprite_shader.frag");
-
     rm.load_shaders("lines", "res/shaders/line_shader.vert", "res/shaders/line_shader.frag");
 
 }
@@ -71,7 +71,7 @@ void Renderer::setup_textures()
     ResourceManager& rm = ResourceManager::get_instance();
 
     rm.load_textures("texture1", "res/Texture/TX Tileset Grass.png");
-
+    rm.load_textures("sprite", "res/MaleCharacter/Sword_Idle/Sword_Idle_full.png");
     Texture* texture1 = rm.get_texture("texture1");
     // Hate dynamically allocating stuff might have to find a way not to..
     tileset = new Tileset(texture1, 32, 32);
@@ -80,8 +80,8 @@ void Renderer::setup_textures()
 
 void Renderer::drawTile(int tileIndex, const glm::vec2& position, const glm::vec2& size) {
     ResourceManager& rm = ResourceManager::get_instance();
-    Shader* spriteShader = rm.get_shaders("sprite");
-    spriteShader->use();
+    Shader* tileShader = rm.get_shaders("tiles");
+    tileShader->use();
 
     //// Convert screen coordinates to normalized device coordinates (NDC)
     float screenWidth = 800.0f;  // Get these from your window
@@ -102,12 +102,12 @@ void Renderer::drawTile(int tileIndex, const glm::vec2& position, const glm::vec
     model = glm::translate(model, glm::vec3(ndcPos, 0.0f));
     model = glm::scale(model, glm::vec3(ndcSize, 1.0f));
 
-    spriteShader->setMat4("model", model);
+    tileShader->setMat4("model", model);
 
     // Set tile UV coordinates
     const Tile& tile = tileset->get_tile(tileIndex);
-    spriteShader->setVec2("textureOffset", tile.textureOffset);
-    spriteShader->setVec2("tileSize", tile.tileSize);
+    tileShader->setVec2("textureOffset", tile.textureOffset);
+    tileShader->setVec2("tileSize", tile.tileSize);
 
     // Correct order: Bind VAO first, then texture, then draw
     //glBindVertexArray(VAO);
@@ -145,6 +145,12 @@ void Renderer::setup_line_renderer(glm::vec2 start, glm::vec2 end, glm::vec4 col
     lineShader->use();
     lineShader->setVec4("color", color);
 }
+void Renderer::setup_sprite_renderer()
+{
+    userSprite.init();
+    Texture* spriteTexture = ResourceManager::get_instance().get_texture("spriteTexture");
+    userSprite.set_texture(spriteTexture);
+}
 
 void Renderer::draw_line()
 {
@@ -157,16 +163,22 @@ void Renderer::draw_line()
     glBindVertexArray(0);
 }
 
+void Renderer::draw_sprite()
+{
+    SpriteManager::get_instance().draw_sprite("sprite", userSprite);
+
+}
+
 void Renderer::draw() {
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     ResourceManager& rm = ResourceManager::get_instance();
-    Shader* spriteShader = rm.get_shaders("sprite");
-    spriteShader->use();
+    Shader* tileShader = rm.get_shaders("tiles");
+    tileShader->use();
 
     glm::mat4 modelMatrix = glm::mat4(1.0f);
-    spriteShader->setMat4("model", modelMatrix);
+    tileShader->setMat4("model", modelMatrix);
 
     quad.draw();
 }

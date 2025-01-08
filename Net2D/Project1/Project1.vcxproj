@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Game\Sprite.cpp" />
     <ClCompile Include="src\Input\Input.cpp" />
     <ClCompile Include="src\Input\InputManager.cpp" />
     <ClCompile Include="src\Globals.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="src\Tilesets\TileMapEditor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Game\Sprite.h" />
     <ClInclude Include="src\Input\Input.h" />
     <ClInclude Include="src\Input\InputManager.h" />
     <ClInclude Include="src\Globals.h" />
@@ -171,6 +173,8 @@
     <None Include="res\shaders\line_shader.vert" />
     <None Include="res\shaders\sprite_shader.frag" />
     <None Include="res\shaders\sprite_shader.vert" />
+    <None Include="res\shaders\tilesetShader.frag" />
+    <None Include="res\shaders\tilesetShader.vert" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\todo.txt" />

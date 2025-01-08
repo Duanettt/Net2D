@@ -14,6 +14,8 @@ void Quad::init()
     0, 1, 3, // first triangle
     1, 2, 3  // second triangle
     };
+
+    m_isInit = true;
 }
 
 void Quad::setup_quad_data()
@@ -51,10 +53,33 @@ void Quad::setup_textures(Tileset* tileset)
 
 
 
+
 void Quad::draw()
 {
-    glBindVertexArray(VAO);
-    glBindTexture(GL_TEXTURE_2D, currentQuadTileset->get_texture()->get_texture());
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-    glBindVertexArray(0);
+    // Awful code but we move.
+    if (currentQuadTileset->get_texture()->get_texture() != NULL)
+    {
+        glBindVertexArray(VAO);
+        glBindTexture(GL_TEXTURE_2D, currentQuadTileset->get_texture()->get_texture());
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glBindVertexArray(0);
+    }
+    else
+    {
+        glBindVertexArray(VAO);
+        glBindTexture(GL_TEXTURE_2D, currentTexture->get_texture());
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glBindVertexArray(0);
+    }
 }
+
+bool Quad::is_init()
+{
+    return m_isInit;
+}
+
+void Quad::setup_textures(Texture* texture)
+{
+    currentTexture = texture;
+}
+

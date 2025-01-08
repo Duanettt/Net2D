@@ -1,10 +1,9 @@
-// sprite.frag
 #version 330 core
-out vec4 FragColor;
 in vec2 TexCoord;
+out vec4 FragColor;
 
-uniform sampler2D currentTexture;
+uniform sampler2D texture1;
 
 void main() {
-    FragColor = texture(currentTexture, TexCoord); // White color for now
+    FragColor = texture(texture1, TexCoord);
 }

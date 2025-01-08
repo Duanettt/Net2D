@@ -13,9 +13,13 @@ public:
 	void setup_quad_data();
 	void setup_textures(Tileset* tileset);
 	void draw();
-private:
+	bool is_init();
+	void setup_textures(Texture* texture);
 
+private:
+	bool m_isInit = false;
 	Tileset* currentQuadTileset;
+	Texture* currentTexture;
 	std::vector<float> vertices;
 	std::vector<unsigned int> indices;
 	unsigned int VAO, VBO, EBO;

@@ -54,6 +54,7 @@ void Engine::setup_renders()
 {
     globals.r->setup_shaders();
     globals.r->setup_renderer();
+    globals.r->setup_sprite_renderer();
 
     // Editors will be separated from this soon.
     init_editor();
@@ -67,6 +68,8 @@ void Engine::run()
     process_input();
     //render_editor();  // Add editor rendering
     tme->render();
+
+    globals.r->draw_sprite();
 
     //globals.r->drawTile(currentTileIndex, glm::vec2(100, 100), glm::vec2(32, 32));
 

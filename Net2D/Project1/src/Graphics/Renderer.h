@@ -14,6 +14,8 @@
 #include "../Core/VBO.h"
 #include "../Core/Quad.h"
 #include "../Tilesets/Tileset.h"
+#include "../Game/Sprite.h"
+#include "../Game/SpriteManager.h"
 
 class Renderer
 {
@@ -23,17 +25,20 @@ public:
 	void setup_renderer();
 	void setup_quad_renderer();
 	void setup_line_renderer(glm::vec2 start, glm::vec2 end, glm::vec4 color);
+	void setup_sprite_renderer();
 	void setup_shaders();
 	void setup_textures();
 
 	void drawTile(int tileIndex, const glm::vec2& position, const glm::vec2& size);
 	void draw_line();
+	void draw_sprite();
 	void draw();
 	void drawLine(glm::vec2 start, glm::vec2 end, glm::vec4 color);
 	Tileset* get_tileset() const { return tileset; }
 
 private:
 	Quad quad;
+    Sprite userSprite;
 	Tileset* tileset;
 	unsigned int VAO, EBO;
 	unsigned int VBO;

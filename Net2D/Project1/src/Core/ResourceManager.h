@@ -12,6 +12,7 @@ public:
 	Shader* load_shaders(const std::string name, const char* vertexPath, const char* fragmentPath);
 	Shader* get_shaders(const std::string name);
 	void load_textures(const std::string name, const char* file_path);
+	Texture* get_texture(const std::string name);
 	Texture* get_texture(const char* name);
 	ResourceManager(ResourceManager const&) = delete;
 	void operator=(ResourceManager const&) = delete;
